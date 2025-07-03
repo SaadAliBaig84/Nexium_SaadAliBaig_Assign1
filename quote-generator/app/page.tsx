@@ -1,7 +1,6 @@
 "use client";
 import HeaderSection from "@/components/HeaderSection";
 import QuoteSection from "@/components/QuoteSection";
-import ActionSection from "@/components/ActionSection";
 import { useState } from "react";
 import { TopicForm } from "./components/TopicSelector";
 import { quotes } from "./data/quotes";
