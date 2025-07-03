@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 export default function QuoteSection({
   quotes,
   activeTopic,
