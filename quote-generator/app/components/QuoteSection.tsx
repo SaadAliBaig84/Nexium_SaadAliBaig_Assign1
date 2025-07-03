@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Image from "next/image";
 export default function QuoteSection({
   quotes,
   activeTopic,
@@ -37,10 +37,12 @@ export default function QuoteSection({
 
       {/* Preload background images */}
       {topicImages.map((topic) => (
-        <img
+        <Image
           key={topic}
           src={`/${topic}.jpg`}
           alt=""
+          width={1}
+          height={1}
           className="hidden"
           aria-hidden="true"
         />
