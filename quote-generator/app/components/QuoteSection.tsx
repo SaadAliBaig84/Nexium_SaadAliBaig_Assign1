@@ -8,15 +8,6 @@ export default function QuoteSection({
   quotes: { text: string; topic: string }[];
   activeTopic: string;
 }) {
-  const topicImages = [
-    "motivation",
-    "life",
-    "perseverance",
-    "tech",
-    "inspiration",
-    "learning",
-  ];
-
   return (
     <motion.section className="py-4 px-4 text-center" layout>
       <AnimatePresence mode="wait">
@@ -34,19 +25,6 @@ export default function QuoteSection({
           </motion.h2>
         )}
       </AnimatePresence>
-
-      {/* Preload background images */}
-      {topicImages.map((topic) => (
-        <Image
-          key={topic}
-          src={`/${topic}.jpg`}
-          alt=""
-          width={1}
-          height={1}
-          className="hidden"
-          aria-hidden="true"
-        />
-      ))}
 
       <motion.div
         key={activeTopic}
