@@ -39,7 +39,7 @@ export default function QuoteSection({
               src={`/${activeTopic}.jpg`}
               alt={`${activeTopic} background`}
               fill
-              className="object-cover opacity-30"
+              className="object-cover"
               priority
             />
           )}
