@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 export default function QuoteSection({
   quotes,
   activeTopic,
@@ -32,15 +33,14 @@ export default function QuoteSection({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Card
-          className="bg-[#2D3250] p-2 text-[#F6B17A] text-center"
-          style={{
-            backgroundImage: `url('/${activeTopic}.jpg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <Card className="bg-[#2D3250] p-2 text-[#F6B17A] text-center">
+          <Image
+            src={`/${activeTopic}.jpg`}
+            alt={`${activeTopic} background`}
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
           <motion.div className="space-y-4 max-w-2xl mx-auto" layout>
             <AnimatePresence mode="wait">
               {quotes.length === 0 ? (

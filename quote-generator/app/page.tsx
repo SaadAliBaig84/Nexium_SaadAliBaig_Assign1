@@ -17,12 +17,6 @@ export default function HomePage() {
     <>
       <Head>
         <title>Quote Generator</title>
-        <link rel="preload" as="image" href="/motivation.jpg" />
-        <link rel="preload" as="image" href="/life.jpg" />
-        <link rel="preload" as="image" href="/tech.jpg" />
-        <link rel="preload" as="image" href="/learning.jpg" />
-        <link rel="preload" as="image" href="/inspiration.jpg" />
-        <link rel="preload" as="image" href="/perseverance.jpg" />
       </Head>
       <main className="px-4 py-4 w-full min-h-screen mx-auto  bg-animated-gradient text-[#F6B17A]">
         <motion.section
