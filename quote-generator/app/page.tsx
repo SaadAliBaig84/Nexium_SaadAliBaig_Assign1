@@ -1,7 +1,7 @@
 "use client";
 import HeaderSection from "@/components/HeaderSection";
 import QuoteSection from "@/components/QuoteSection";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { TopicForm } from "./components/TopicSelector";
 import { quotes } from "./data/quotes";
 import { motion } from "framer-motion";
@@ -21,26 +21,6 @@ export default function HomePage() {
     setFilteredQuotes(filtered);
     setSelectedTopic(topic);
   }
-
-  useEffect(() => {
-    const inspiration = new Image();
-    inspiration.src = "/inspiration.jpg";
-
-    const learning = new Image();
-    learning.src = "/learning.jpg";
-
-    const life = new Image();
-    life.src = "/life.jpg";
-
-    const perseverance = new Image();
-    perseverance.src = "/perseverance.jpg";
-
-    const motivation = new Image();
-    motivation.src = "/motivation.jpg";
-
-    const tech = new Image();
-    tech.src = "/tech.jpg";
-  }, [selectedTopic]);
 
   return (
     <>
