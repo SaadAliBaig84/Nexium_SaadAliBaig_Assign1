@@ -6,12 +6,22 @@ import { TopicForm } from "./components/TopicSelector";
 import { quotes } from "./data/quotes";
 import { motion } from "framer-motion";
 import Head from "next/head";
+
 export default function HomePage() {
   const [selectedTopic, setSelectedTopic] = useState("");
+  const [filteredQuotes, setFilteredQuotes] = useState<
+    { text: string; topic: string }[]
+  >([]);
+  function onGenerate(topic: string) {
+    const filtered = quotes
+      .filter((q) => q.topic === topic)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
 
-  const filteredQuotes = quotes
-    .filter((q) => q.topic == selectedTopic)
-    .slice(0, 3);
+    setFilteredQuotes(filtered);
+    setSelectedTopic(topic);
+  }
+
   useEffect(() => {
     const inspiration = new Image();
     inspiration.src = "/inspiration.jpg";
@@ -47,7 +57,7 @@ export default function HomePage() {
           <HeaderSection />
           <div className="flex flex-col lg:flex-row gap-10 mt-10">
             <div className="w-full lg:w-1/4 space-y-6">
-              <TopicForm onSubmit={setSelectedTopic} />
+              <TopicForm onSubmit={onGenerate} />
             </div>
             <div className="w-full lg:w-3/4">
               <QuoteSection
